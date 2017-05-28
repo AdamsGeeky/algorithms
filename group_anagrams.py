@@ -48,10 +48,7 @@ def group_anagrams(word_list):
     hash_map = defaultdict(list)
     for word in word_list:
         hash_map[hash_bucket(word)].append(word)
-    result = []
-    for list_of_anagrams in hash_map.values():
-        result += list_of_anagrams
-    return result
+    return [word for values in hash_map.values() for word in values]
 
 
 if __name__ == "__main__":
